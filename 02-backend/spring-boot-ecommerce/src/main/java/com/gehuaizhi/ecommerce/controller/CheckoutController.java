@@ -5,7 +5,7 @@ import com.gehuaizhi.ecommerce.dto.PurchaseResponse;
 import com.gehuaizhi.ecommerce.service.CheckoutService;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin("https://localhost:4200")
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/checkout")
 public class CheckoutController {
@@ -18,7 +18,7 @@ public class CheckoutController {
 
     @PostMapping("/purchase")
     public PurchaseResponse placeOrder(@RequestBody Purchase purchase) {
-        
+
         PurchaseResponse purchaseResponse = checkoutService.placeOrder(purchase);
 
         return purchaseResponse;
