@@ -21,7 +21,7 @@ import { LoginStatusComponent } from './components/login-status/login-status.com
 import { OktaAuthGuard, OktaAuthModule, OktaCallbackComponent, OKTA_CONFIG } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 import myAppConfig from './config/my-app-config';
-// import { MembersPageComponent } from './components/members-page/members-page.component';
+import { MembersPageComponent } from './components/members-page/members-page.component';
 // import { OrderHistoryComponent } from './components/order-history/order-history.component';
 // import { AuthInterceptorService } from './services/auth-interceptor.service';
 
@@ -40,7 +40,7 @@ function onAuthRequired(oktaAuth, injector) {
 const routes: Routes = [
 
   // {path: 'order-history', component: OrderHistoryComponent, canActivate: [ OktaAuthGuard ]},
-  // {path: 'members', component: MembersPageComponent, canActivate: [OktaAuthGuard], data: {onAuthRequired: onAuthRequired} },
+  {path: 'members', component: MembersPageComponent, canActivate: [OktaAuthGuard], data: {onAuthRequired: onAuthRequired} },
 
   {path: 'login/callback', component: OktaCallbackComponent},
   {path: 'login', component: LoginComponent},
@@ -68,6 +68,7 @@ const routes: Routes = [
     CheckoutComponent,
     LoginComponent,
     LoginStatusComponent,
+    MembersPageComponent,
     // MembersPageComponent,
     // OrderHistoryComponent
   ],
